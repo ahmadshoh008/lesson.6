@@ -1,0 +1,108 @@
+$displays:flex,grid,none,block,inline,inline-block;
+$justifies:center,space-between,space-evenly,space-around,start,end,left;    
+$aligns:center,end,start,baseline;
+$colors: (
+    surx:#ff0000,
+    sabz:#00ff6e,
+    saber1:#87edd5,
+    saber:#2EB897,
+    safed:#ffffff,
+    kabut:#2A84EE,
+    siyoh:#000000,
+    kabut1:#caebf9,
+    xoki:#808080,
+    seriii:#FFF4F580,
+    kabutii:#4058FF,
+    kabber:#F1F5FF80,
+    torik:#121722,
+    seritar:#F1F5FF80,
+
+);
+@each $key, $value in $colors{
+    .text-#{$key}{
+        color: $value;
+    }
+    .bg-#{$key}{
+        background-color: $value;
+    }
+}
+@each $display in $displays{
+    .#{$display}{
+        display:$display;
+    }
+}
+@each $justify in $justifies{
+    .#{$justify}{
+       justify-content:$justify;
+    }
+}
+@each $align in $aligns{
+    .#{$align}{
+       align-items:$align;
+       
+    }
+}
+@for $m from 1 through 30{
+    .g-#{$m}{
+        gap: $m * 10px;
+    }
+    .ma-#{$m}{
+        margin: $m * 10px;
+    }
+    .w-#{$m}{
+        width: $m * 20px;
+    }
+    .h-#{$m}{
+        height: $m * 20px;
+    }
+    .f-#{$m}{
+        font-size: $m * 10px;
+    }
+    .px-#{$m}{
+        padding-left:$m * 10px ;
+        padding-right: $m * 10px;
+    }
+    .py-#{$m}{
+        padding-top:$m * 10px;
+        padding-bottom: $m * 10px ;
+    }
+    .br-#{$m}{
+        border-radius: $m * 10px;
+    }
+}
+
+@mixin button($bg,$w,$col,$pad){
+    color: $col;
+    width: $w;
+    background-color: $bg;
+    padding: $pad;
+    border-radius: 6px;
+    border: none;
+    border: 1px solid black;
+}
+.bt1{
+    @include button(#408CFF1A, 100px,#4058FF, 10px);
+    border-radius: 30px;
+    border: none;
+}
+.bt2{
+    @include button(#4058FF, 100px,white,10px);
+    border: none;
+    border-radius: 25px;
+}
+.bt3{
+    @include button(white, 100px,#4058FF,10px);
+    border: none;
+    border-radius: 25px;
+}
+.box2{
+    padding: 10px;
+    border-radius: 15px;
+}
+.box1{
+    width: 100%;
+    height: 50vh;
+    text-align: center;
+    padding-top: 100px;
+    margin-top: 90px;
+}
